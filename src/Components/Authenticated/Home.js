@@ -3,6 +3,8 @@ import { FaTelegramPlane } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
 import { useHistory } from "react-router";
 import { isAuth, signout } from "../../helper/auth";
+import Chats from "./Chats";
+import ChatRoom from "./Chatroom";
 
 function Home() 
 {
@@ -25,6 +27,13 @@ function Home()
                         </p>
                 </div>
             </nav>
+            <div className="container">
+                <div className="row">
+                    <Chats />
+                    <ChatRoom />
+                </div>
+            </div>
+            
         </div>
     )
 }

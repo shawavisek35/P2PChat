@@ -46,3 +46,10 @@
   font-family : 'Architects Daughter', cursive;
 }
 
+.chat-room {
+  background-image: url("./assets/images/chat_background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 77vh;
+}
+
