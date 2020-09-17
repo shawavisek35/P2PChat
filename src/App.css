@@ -1,3 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Architects+Daughter&display=swap');
+
+
 .main-container {
   height : 550px;
+  padding : 0px !important;
 }
+
+.header-section {
+  background: #2980B9;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2980B9, #6DD5FA, #9acdee);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2980B9, #6DD5FA, #9acdee); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.brand-logo {
+  color : white;
+  font-family : 'Architects Daughter', cursive;
+  font-size: 25px;
+}
+
+.log {
+  cursor: pointer;
+}
+
+.profile-pic {
+  cursor: pointer;
+  height : 4%;
+  width : 4%;
+  transition: 0.4s ease-in-out;
+}
+
+.profile-pic:hover {
+  transform: scale(0.8);
+}
+
+.card-login {
+  position: relative;
+  top : 40%;
+  align-items: center;
+  left : 35%
+
+}
+
+.card-p {
+  font-family : 'Architects Daughter', cursive;
+}
+

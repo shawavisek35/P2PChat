@@ -1,13 +1,25 @@
 import React from 'react';
 import './App.css';
+import Login from "./Components/notAuthenticated/login";
+import {
+  isAuth
+} from "./helper/auth";
+import Home from "./Components/Authenticated/Home";
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="container main-container mt-5 shadow-lg">
-      <div className="header-section">
-        <p className="px-2 py-2">P2Pchat</p>
+    <BrowserRouter forceRefresh={true}>
+      <div className="container main-container mt-5 shadow-lg">
+        {
+          isAuth()
+          ?
+          <Home />
+          :
+          <Login />
+        }
       </div>
-    </div>
+    </BrowserRouter>
   );
 }
 
