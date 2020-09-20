@@ -89,10 +89,16 @@
 .chat-message{
   background-color: white;
   font-size: 12px;
-  width : 100px
+  max-width : 200px;
+  height : 30px;
+  letter-spacing: 3px;
+ 
 }
 .receiver {
-  background-color: green;
+  background-color: rgb(167, 243, 167);
   font-size: 12px;
-  width : 100px
+  max-width : 200px;
+  height : 30px;
+  letter-spacing: 3px;
+  
 }

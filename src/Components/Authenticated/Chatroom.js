@@ -47,14 +47,23 @@ function ChatRoom()
             </div>
             <div className="chat-room overflow-auto">
                 {
-                    message.map(mes => (
-                        <>
-                        <div className="px-2">
-                            <p className={`chat-message rounded-pill text-center ${isAuth().email === mes.name && "receiver"}`}>{mes.content}</p>
-                        </div>
-                        <br />
-                        </>
-                    ))
+                    message.map(mes => {
+                        if(isAuth().email === mes.name)
+                        {
+                            return (
+                                <div className="px-2 d-flex justify-content-end my-1">
+                                    <p className={`receiver rounded-pill px-2 py-1`}>{mes.content}</p>
+                                 </div>
+                            )
+                        }
+                        else{
+                            return (
+                                <div className="px-2 d-flex justify-content-start">
+                                    <p className={`chat-message rounded-pill px-2 py-1`}>{mes.content}</p>
+                                </div>
+                            )
+                        }
+                    })
                 }
             </div>
             <div className="chat-room-footer row px-2 py-1">
