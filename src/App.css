@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Architects+Daughter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Architects+Daughter&family=Caveat&display=swap');
 
 
 .main-container {
@@ -48,8 +48,51 @@
 
 .chat-room {
   background-image: url("./assets/images/chat_background.jpg");
+  width : 135vh;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 77vh;
+  height: 62vh;
+  
 }
 
+.chat-contact {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 15px;
+  font-family: "Caveat", cursive;
+}
+
+.chat-image {
+  width : 20%;
+  height : 20%
+}
+
+.chat-room-header {
+  background-color: rgb(255, 251, 220);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 15px;
+  font-family: "Caveat", cursive;
+  width : 135vh;
+
+  
+}
+
+.send-message {
+  cursor: pointer;
+}
+
+.message-box {
+  width : 700px !important
+}
+
+.chat-message{
+  background-color: white;
+  font-size: 12px;
+  width : 100px
+}
+.receiver {
+  background-color: green;
+  font-size: 12px;
+  width : 100px
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import { FaTelegramPlane } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
-import { useHistory } from "react-router";
+import { useHistory, Switch, Redirect, Route } from "react-router";
 import { isAuth, signout } from "../../helper/auth";
 import Chats from "./Chats";
 import ChatRoom from "./Chatroom";
@@ -14,6 +14,7 @@ function Home()
             history.push("/");
         })
     }
+    
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light header-section">
@@ -30,7 +31,14 @@ function Home()
             <div className="container">
                 <div className="row">
                     <Chats />
-                    <ChatRoom />
+                    <Switch>
+                        <Route path="/chat/:chatId">
+                            <ChatRoom />
+                        </Route>
+                        <Route path="/">
+                            <h1>Chat room</h1>
+                        </Route>
+                    </Switch>
                 </div>
             </div>
             
