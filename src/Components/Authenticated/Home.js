@@ -1,7 +1,7 @@
 import React from "react";
 import { FaTelegramPlane } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
-import { useHistory, Switch, Redirect, Route } from "react-router";
+import { useHistory, Switch, Route } from "react-router";
 import { isAuth, signout } from "../../helper/auth";
 import Chats from "./Chats";
 import ChatRoom from "./Chatroom";
