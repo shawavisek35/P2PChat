@@ -23,7 +23,7 @@ function Home()
                         <p className="float-left"><FaTelegramPlane className="mx-2"/>P2P Chat</p>
                     </div>
                         <p className="px-3">
-                            <FiLogOut className="float-right mx-auto my-1 log" size="2rem" color="red" onClick={signOut} />
+                            <FiLogOut className="float-right mx-auto my-1 log" size="5%" color="red" onClick={signOut} />
                             <img src={isAuth().photoURL} className="profile-pic rounded-circle float-right mx-4" alt="profile" />
                         </p>
                 </div>

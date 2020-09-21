@@ -48,7 +48,7 @@ function ChatRoom()
     return (
         <div className="col-9">
             <div className="chat-room-header px-2 py-1 align-middle form-inline">
-                <img src={require("../../assets/images/pika.jpg")} alt="" className="mr-3 rounded-circle" style={{width : "5%", height : "5%"}} />
+                <img src={require("../../assets/images/pika.jpg")} alt="" className="mr-3 rounded-circle" style={{width : "6%", height : "5%"}} />
                 <p>{chat.split("@")[0]}</p>
             </div>
             <div className="chat-room overflow-auto">
@@ -64,7 +64,7 @@ function ChatRoom()
                         }
                         else{
                             return (
-                                <div className="px-2 d-flex justify-content-start">
+                                <div className="px-2 d-flex justify-content-start my-1">
                                     <p className={`chat-message rounded-pill px-2 py-1`}>{mes.content}</p>
                                 </div>
                             )
@@ -72,9 +72,9 @@ function ChatRoom()
                     })
                 }
             </div>
-            <div className="chat-room-footer row px-2 py-1">
+            <div className="chat-room-footer py-3">
                 <form className="form-inline">
-                    <input className="form-control message-box rounded-pill px-3 mr-5" value={newMessage} onChange={handleChange} />
+                    <input className="form-control message-box rounded-pill mr-2" value={newMessage} onChange={handleChange} />
                     <FaTelegramPlane size="2rem" className="send-message" onClick={sendMessage} />
                 </form>
             </div>

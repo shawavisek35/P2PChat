@@ -33,15 +33,22 @@ const Login = () => {
     }
 
     return (
-            <div className="card card-login shadow-lg border-0" style={{width : "20rem"}} >
-                <div className="card-body">
-                    <p className="text-center"><FaTelegramPlane size="3rem"/></p>
-                    <h2 className="text-center card-p">P2P Chat</h2>
-                    <button type="button" className="mt-5 btn btn-outline-danger" onClick={signIn}>
-                       <FcGoogle size="2rem" className="mr-3" />Sign in with Google
-                    </button>
+        <div className="row">
+            <div className="col-sm-12 col-md-6 py-5">
+                <img src={require("../../assets/images/login.svg")} alt="login" className="img-fluid" />
+            </div>
+            <div className="col-sm-12 col-md-6 py-5">
+                <div className="card card-login text-center my-5 mx-5 border-0" style={{width : "20rem"}} >
+                    <div className="card-body">
+                        <p className="text-center"><FaTelegramPlane size="3rem"/></p>
+                        <h2 className="text-center card-p">P2P Chat</h2>
+                        <button type="button" className="mt-5 btn btn-outline-danger" onClick={signIn}>
+                        <FcGoogle size="2rem" className="mr-3" />Sign in with Google
+                        </button>
+                    </div>
                 </div>
             </div>
+        </div>
     )
 }
 

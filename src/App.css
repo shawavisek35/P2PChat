@@ -2,7 +2,6 @@
 
 
 .main-container {
-  height : 550px;
   padding : 0px !important;
 }
 
@@ -25,21 +24,13 @@
 
 .profile-pic {
   cursor: pointer;
-  height : 4%;
-  width : 4%;
+  height : 7%;
+  width : 7%;
   transition: 0.4s ease-in-out;
 }
 
 .profile-pic:hover {
   transform: scale(0.8);
-}
-
-.card-login {
-  position: relative;
-  top : 40%;
-  align-items: center;
-  left : 35%
-
 }
 
 .card-p {
@@ -48,7 +39,7 @@
 
 .chat-room {
   background-image: url("./assets/images/chat_background.jpg");
-  width : 135vh;
+  width : 100%;
   background-repeat: no-repeat;
   background-size: cover;
   height: 62vh;
@@ -73,7 +64,7 @@
   letter-spacing: 2px;
   font-size: 15px;
   font-family: "Caveat", cursive;
-  width : 135vh;
+  width : 100%;
 
   
 }
@@ -83,7 +74,7 @@
 }
 
 .message-box {
-  width : 700px !important
+  width : 80% !important
 }
 
 .chat-message{
@@ -102,3 +93,4 @@
   letter-spacing: 3px;
   
 }
+
