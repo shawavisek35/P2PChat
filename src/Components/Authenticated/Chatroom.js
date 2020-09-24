@@ -53,19 +53,19 @@ function ChatRoom()
             </div>
             <div className="chat-room overflow-auto">
                 {
-                    message.map(mes => {
+                    message.map((mes, index) => {
                         if(isAuth().email === mes.name)
                         {
                             return (
-                                <div className="px-2 d-flex justify-content-end my-1">
-                                    <p className={`receiver rounded-pill px-2 py-1`}>{mes.content}</p>
+                                <div className="px-2 d-flex justify-content-end my-1" key={index}>
+                                    <p className="receiver rounded-pill px-3 py-1 text-wrap">{mes.content}</p>
                                  </div>
                             )
                         }
                         else{
                             return (
-                                <div className="px-2 d-flex justify-content-start my-1">
-                                    <p className={`chat-message rounded-pill px-2 py-1`}>{mes.content}</p>
+                                <div className="px-2 d-flex justify-content-start my-1" key={index}>
+                                    <p className={`chat-message rounded-pill px-2 py-1 text-wrap`}>{mes.content}</p>
                                 </div>
                             )
                         }

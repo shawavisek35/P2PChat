@@ -1,13 +1,16 @@
 import React from "react";
 import {
     auth,
-    provider
+    db,
+    provider,
+    
 } from "../../config/firebase";
 
 import {useHistory} from "react-router-dom";
 
 import {
-    authenticate
+    authenticate,
+    
 } from "../../helper/auth";
 import {
     FcGoogle
@@ -18,12 +21,22 @@ import { FaTelegramPlane } from "react-icons/fa";
 const Login = () => {
     const history = useHistory();
     const signIn = (e) => {
-        e.preventDefault();
-        
+        e.preventDefault();        
+
         auth.signInWithPopup(provider)
         .then((response) => {
-            authenticate(response, () => {
-                history.push("/");
+
+            db.collection("users").doc(response.user.email).set({
+                name : response.user.email
+            })
+            .then(() => {
+                console.log("User registered.");
+                authenticate(response, () => {
+                    history.push("/");
+                });
+            })
+            .catch(err => {
+                console.log(err);
             })
         })
         .catch((err) => {

@@ -7,11 +7,11 @@ function Chats()
     const [contacts, setContacts] = useState([]);
 
     useEffect(() => {
+            
         db.collection("chats").onSnapshot(snap => (
             setContacts(snap.docs.map(doc => {
                 if(doc.data().name1 === isAuth().email || doc.data().name2 === isAuth().email)
                 {
-                    console.table(doc.data());
                     return(
                         {
                             id : doc.id,
@@ -21,9 +21,10 @@ function Chats()
                 }
             }))
         ));
+
     }, [])
     return (
-        <div className="col-3 px-2 py-2">
+        <div className="col-3 px-2 py-2 overflow-auto">
             {
                 contacts.map((contact) => {
                     if(contact!=null)
