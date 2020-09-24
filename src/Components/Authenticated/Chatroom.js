@@ -11,6 +11,11 @@ function ChatRoom()
     const {chatId} = useParams();
     const [newMessage, setNewMessage] = useState("")
 
+    const scrollDown = () => {
+        var div = document.getElementById("chat-room");
+        div.scrollTop = div.scrollHeight;
+    }
+
     useEffect(() => {
         db.collection("chats").doc(chatId).onSnapshot(snap => {
             if(snap.data().name1 === isAuth().email)
@@ -37,7 +42,13 @@ function ChatRoom()
                 time : Date.now()
             }
         )
-        setNewMessage("")
+        .then(() => {
+            scrollDown();
+            setNewMessage("");
+        })
+        .catch(err => {
+            console.log(err);
+        })
     }
 
     const handleChange = (e) => {
@@ -51,7 +62,7 @@ function ChatRoom()
                 <img src={require("../../assets/images/pika.jpg")} alt="" className="mr-3 rounded-circle" style={{width : "6%", height : "5%"}} />
                 <p>{chat.split("@")[0]}</p>
             </div>
-            <div className="chat-room overflow-auto">
+            <div className="chat-room overflow-auto" id="chat-room">
                 {
                     message.map((mes, index) => {
                         if(isAuth().email === mes.name)
