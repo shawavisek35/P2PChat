@@ -46,7 +46,7 @@ const Login = () => {
     }
 
     return (
-        <div className="row">
+        <div className="row text-center">
             <div className="col-sm-12 col-md-6 py-5">
                 <img src={require("../../assets/images/login.svg")} alt="login" className="img-fluid" />
             </div>
@@ -61,7 +61,7 @@ const Login = () => {
                     </div>
                 </div>
             </div>
-            <p className="text-center">Made With &#10084; by <a href="https://github.com/shawavisek35">Avisek</a></p>
+            <p className="text-center mx-5">Made With &#10084; by <a href="https://github.com/shawavisek35">Avisek</a></p>
         </div>
     )
 }
