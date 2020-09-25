@@ -61,7 +61,7 @@ const Login = () => {
                     </div>
                 </div>
             </div>
-            <p>Made With &#10084; by <a href="https://github.com/shawavisek35">Avisek</a></p>
+            <p className="text-center">Made With &#10084; by <a href="https://github.com/shawavisek35">Avisek</a></p>
         </div>
     )
 }
