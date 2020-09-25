@@ -14,9 +14,14 @@ function ChatRoom()
     const scrollDown = () => {
         var div = document.getElementById("chat-room");
         div.scrollTop = div.scrollHeight;
+    };
+
+    const focussingInput = () => {
+        document.getElementById("newMessage").focus();
     }
 
     useEffect(() => {
+        
         db.collection("chats").doc(chatId).onSnapshot(snap => {
             if(snap.data().name1 === isAuth().email)
             {
@@ -29,8 +34,12 @@ function ChatRoom()
         db.collection("chats").doc(chatId).collection("message").orderBy("time", "asc").onSnapshot(snap => (
             setMessage(snap.docs.map(doc => (
                 doc.data()
-            )))
+            ))),
+            scrollDown()    
+
         ));
+        
+        focussingInput();
     }, [chatId])
 
     const sendMessage = (e) => {
@@ -43,8 +52,8 @@ function ChatRoom()
             }
         )
         .then(() => {
-            scrollDown();
             setNewMessage("");
+            focussingInput();
         })
         .catch(err => {
             console.log(err);
@@ -84,8 +93,8 @@ function ChatRoom()
                 }
             </div>
             <div className="chat-room-footer py-3">
-                <form className="form-inline">
-                    <input className="form-control message-box rounded-pill mr-2" value={newMessage} onChange={handleChange} />
+                <form className="form-inline" onSubmit={sendMessage}>
+                    <input className="form-control message-box rounded-pill mr-2" id="newMessage" value={newMessage} onChange={handleChange} />
                     <FaTelegramPlane size="2rem" className="send-message" onClick={sendMessage} />
                 </form>
             </div>

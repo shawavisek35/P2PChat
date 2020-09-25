@@ -61,11 +61,17 @@ function Home()
                                 <ModalBody>
                                     {
                                         user.map((u,index) => {
+                                            if(u.name!= isAuth().email)
+                                            {
+                                                return (
+                                                    <div className="px-3 my-2 alert alert-primary" key={index}>
+                                                        {u.name}
+                                                        <BiSend className="float-right log" size="5%" onClick={() => sendMessage2(u.name)} />
+                                                    </div>
+                                                )
+                                            }
                                             return (
-                                                <div className="px-3 my-2 alert alert-primary" key={index}>
-                                                    {u.name}
-                                                    <BiSend className="float-right log" size="5%" onClick={() => sendMessage2(u.name)} />
-                                                </div>
+                                                null
                                             )
                                         })
                                     }
